@@ -115,7 +115,7 @@ SLIDEFADE
           $(this).append('<span class="pgloading"></span>');
           var galleryTitle = $(this).children('span').html();
           if(pg.type == 'local') {
-            var galleryID = $(this).attr('data-album-index').replace('http://', '').replace('//', '').replace('https://', '');
+            var galleryID = $(this).data('album-index').replace('http://', '').replace('//', '').replace('https://', '');
             pg.parseData(pg.imageData.albums[galleryID],galleryTitle);
           } else {
             var galleryURL = this.href;
@@ -175,7 +175,7 @@ SLIDEFADE
       ----------------------------*/
       getDataAttr: function(){
         //Gallery Type *required
-        var dataAttr = lmnt.attr('data-type');
+        var dataAttr = lmnt.data('type');
         
         if(pg.type == null && dataAttr) {
           pg.type = dataAttr;
@@ -185,7 +185,7 @@ SLIDEFADE
         }
         
         //Gallery User Id *required if not local
-        dataAttr = lmnt.attr('data-userid');
+        dataAttr = lmnt.data('userid');
         if(dataAttr) {
           pg.userId = dataAttr;
         }
@@ -194,46 +194,46 @@ SLIDEFADE
         }
         
         //Limit on the amount photos per gallery
-        dataAttr = lmnt.attr('data-limit');
+        dataAttr = lmnt.data('limit');
         if(dataAttr) {
           pg.limit = dataAttr;
         }
         
         //Limit on the amount albums
-        dataAttr = lmnt.attr('data-album-limit');
+        dataAttr = lmnt.data('album-limit');
         if(dataAttr) {
           pg.albumLimit = dataAttr;
         }
         
         //album id to exclude
-        dataAttr = lmnt.attr('data-exclude');
+        dataAttr = lmnt.data('exclude');
         if(dataAttr) {
           pg.exclude = dataAttr.split(',');
         }
 
         //album ids to include
-        dataAttr = lmnt.attr('data-include');
+        dataAttr = lmnt.data('include');
         if(dataAttr) {
           pg.include = dataAttr.split(',');
         }
         
         //Api key - used with Flickr
-        dataAttr = lmnt.attr('data-api-key');
+        dataAttr = lmnt.data('api-key');
         if(dataAttr) {
           pg.apiKey = dataAttr;
         }
         
         //Access Token - used with instagram
-        dataAttr = lmnt.attr('data-access-token');
+        dataAttr = lmnt.data('access-token');
         if(dataAttr) {
           pg.accessToken = dataAttr;
         }
-        dataAttr = lmnt.attr('data-album-id');
+        dataAttr = lmnt.data('album-id');
         if(dataAttr) {
           pg.albumId = dataAttr;
           
           //show hide the album title if we are in single gallery mode
-          titleAttr = lmnt.attr('data-album-title');
+          titleAttr = lmnt.data('album-title');
           
           if(titleAttr == 'true') {
             pg.albumTitle = true;
@@ -242,19 +242,19 @@ SLIDEFADE
           }
         }
         
-        dataAttr = lmnt.attr('data-credit');
+        dataAttr = lmnt.data('credit');
         if(dataAttr == 'false') {
           pg.credit = false;
         }
 
         //Image path
-        dataAttr = lmnt.attr('data-image-path');
+        dataAttr = lmnt.data('image-path');
         if(dataAttr) {
             pg.imagePath = dataAttr;
         }
         
         //JSON string containing image data *required only for local
-        dataAttr = lmnt.attr('data-image-data');
+        dataAttr = lmnt.data('image-data');
         if(dataAttr) {
           pg.imageData = JSON.parse(dataAttr);
         }
