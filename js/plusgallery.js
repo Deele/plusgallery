@@ -235,15 +235,11 @@ SLIDEFADE
           //show hide the album title if we are in single gallery mode
           titleAttr = lmnt.data('album-title');
           
-          if(titleAttr == 'true') {
-            pg.albumTitle = true;
-          } else {
-            pg.albumTitle = false;
-          }
+          pg.albumTitle = (titleAttr == 'true' || titleAttr == true);
         }
         
         dataAttr = lmnt.data('credit');
-        if(dataAttr == 'false') {
+        if(dataAttr == 'false' || dataAttr == false) {
           pg.credit = false;
         }
 
