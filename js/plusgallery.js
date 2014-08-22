@@ -58,7 +58,7 @@ SLIDEFADE
       exclude: null,
       include: null,
       imageData: null,
-      t: {
+      translations: {
         'zoomview btn close': 'Close',
         'zoomview btn previous': 'Previous',
         'zoomview btn next': 'Next',
@@ -280,9 +280,9 @@ SLIDEFADE
         );
         $('body').prepend(
           '<div id="pgzoomview" class="pg ' + touchClass + '">' +
-            '<a href="#" rel="previous" id="pgzoomclose" title="'+pg.t['zoomview btn close']+'">'+pg.t['zoomview btn close']+'</a>' +
-            '<a href="#" rel="previous" id="pgprevious" class="pgzoomarrow" title="'+pg.t['zoomview btn previous']+'">'+pg.t['zoomview btn previous']+'</a>' +
-            '<a href="#" rel="next" id="pgnext" class="pgzoomarrow" title="'+pg.t['zoomview btn next']+'">'+pg.t['zoomview btn next']+'</a>' +
+            '<a href="#" rel="previous" id="pgzoomclose" title="'+pg.translations['zoomview btn close']+'">'+pg.translations['zoomview btn close']+'</a>' +
+            '<a href="#" rel="previous" id="pgprevious" class="pgzoomarrow" title="'+pg.translations['zoomview btn previous']+'">'+pg.translations['zoomview btn previous']+'</a>' +
+            '<a href="#" rel="next" id="pgnext" class="pgzoomarrow" title="'+pg.translations['zoomview btn next']+'">'+pg.translations['zoomview btn next']+'</a>' +
             '<div id="pgzoomscroll">' +
               '<ul id="pgzoom"></ul>' +
             '</div>' +
@@ -292,7 +292,7 @@ SLIDEFADE
         lmnt.addClass('pg');
         
         if(pg.credit === true) {
-          lmnt.append('<div id="pgcredit"><a href="http://www.plusgallery.net" target="_blank" title="'+pg.t['powered by']+' +GALLERY"><span>+</span>Gallery</a></div>');
+          lmnt.append('<div id="pgcredit"><a href="http://www.plusgallery.net" target="_blank" title="'+pg.translations['powered by']+' +GALLERY"><span>+</span>Gallery</a></div>');
         }
         
         //console.log('pg.albumTitle: ' + pg.albumTitle);
