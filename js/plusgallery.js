@@ -94,7 +94,7 @@ SLIDEFADE
         pg.getDataAttr();
         
         pg.writeHTML();
-        if(pg.albumId !== null
+        if(pg.albumId !== null && typeof(pg.albumId) !== typeof(undefined)
           || pg.type == 'instagram'
           || (pg.type == 'local' && !pg.imageData.hasOwnProperty('albums'))){
           //load single Album
@@ -601,7 +601,7 @@ SLIDEFADE
 
         $('.crumbtitle').remove();
         $('#pgthumbs').empty();
-        if(title === undefined){
+        if(typeof(title) !== typeof(undefined)){
           title = '&nbsp;';
         }
         $('#pgthumbcrumbs').append('<li class="crumbtitle">' + title + '</li>');
